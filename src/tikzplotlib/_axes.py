@@ -167,7 +167,7 @@ class Axes:
         content = self.content
         if self.axis_options:
             # Put axis_options in a deterministic order to avoid diff churn.
-            self.axis_options.sort()
+            #self.axis_options.sort()
             content.append("[\n" + ",\n".join(self.axis_options) + "\n]\n")
         return content
 
