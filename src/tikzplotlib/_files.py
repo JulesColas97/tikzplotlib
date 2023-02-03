@@ -1,13 +1,20 @@
 from pathlib import Path
 
 
+#def _gen_filepath(data, nb_key, ext):
+#    rel_filepath = Path(f"{data['base name']}-{data[nb_key]:03d}{ext}")
+#
+#    if data["rel data path"]:
+#        rel_filepath = data["rel data path"] / rel_filepath
+#
+#    return data["output dir"] / rel_filepath, rel_filepath
+
 def _gen_filepath(data, nb_key, ext):
-    rel_filepath = Path(f"{data['base name']}-{data[nb_key]:03d}{ext}")
-
-    if data["rel data path"]:
-        rel_filepath = data["rel data path"] / rel_filepath
-
-    return data["output dir"] / rel_filepath, rel_filepath
+        rel_filepath = Path(f"{data['base name']}-{data[nb_key]:03d}{ext}")
+        name = data["base name"] + f"-{data[nb_key]:03d}{ext}"
+        if data["rel data path"]:
+            rel_filepath = data["rel data path"] / rel_filepath
+        return Path(data["output dir"])/name, rel_filepath
 
 
 def new_filepath(data, file_kind, ext):
