@@ -179,7 +179,7 @@ def get_tikz_code(
     data["legend colors"] = []
     data["add axis environment"] = add_axis_environment
     data["show_info"] = show_info
-    dat["axis_equal"] = axis_equal
+    data["axis_equal"] = axis_equal
     # rectangle_legends is used to keep track of which rectangles have already
     # had \addlegendimage added. There should be only one \addlegenimage per
     # bar chart data series.
