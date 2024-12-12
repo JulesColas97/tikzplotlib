@@ -40,6 +40,7 @@ def get_tikz_code(
     float_format: str = ".15g",
     table_row_sep: str = "\n",
     flavor: str = "latex",
+    axis_equal: bool = False,
 ):
     """Main function. Here, the recursion into the image starts and the
     contents are picked up. The actual file gets written in this routine.
@@ -135,6 +136,8 @@ def get_tikz_code(
                    Supported are ``"latex"`` and``"context"``.
                    Default is ``"latex"``.
     :type flavor: str
+    :param axis_equal: if true, have equal axis ratio
+    :type axis_equal: bool
 
     :returns: None
 
@@ -176,6 +179,7 @@ def get_tikz_code(
     data["legend colors"] = []
     data["add axis environment"] = add_axis_environment
     data["show_info"] = show_info
+    dat["axis_equal"] = axis_equal
     # rectangle_legends is used to keep track of which rectangles have already
     # had \addlegendimage added. There should be only one \addlegenimage per
     # bar chart data series.
